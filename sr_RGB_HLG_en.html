@@ -76,6 +76,9 @@ var cVal=0;
 
 var HDRLin_Mul=3.5
 
+var SincIntEdges=100;
+var SincIntEdgesChroma=50;
+
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'scatter',
@@ -343,7 +346,7 @@ function fillPointsArr()
  for (i=0; i < 600; i++)
  TenXSamplesSum[i] = 0.0;
 
- for (SampleNum = -40; SampleNum < 0; SampleNum++)
+ for (SampleNum = -SincIntEdges; SampleNum < 0; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -361,7 +364,7 @@ function fillPointsArr()
   }
  }
 
- for (SampleNum = 10; SampleNum < 40; SampleNum++)
+ for (SampleNum = 10; SampleNum < SincIntEdges+10; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -383,7 +386,7 @@ function fillPointsArr()
  for (i=0; i < 600; i++)
  TenXSamplesSum[i] = 0.0;
 
- for (SampleNum = -40; SampleNum < 0; SampleNum++)
+ for (SampleNum = -SincIntEdges; SampleNum < 0; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -401,7 +404,7 @@ function fillPointsArr()
   }
  }
 
- for (SampleNum = 10; SampleNum < 40; SampleNum++)
+ for (SampleNum = 10; SampleNum < SincIntEdges+10; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -424,7 +427,7 @@ function fillPointsArr()
  for (i=0; i < 600; i++)
  TenXSamplesSum[i] = 0.0;
 
- for (SampleNum = -40; SampleNum < 0; SampleNum++)
+ for (SampleNum = -SincIntEdges; SampleNum < 0; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -442,7 +445,7 @@ function fillPointsArr()
   }
  }
 
- for (SampleNum = 10; SampleNum < 40; SampleNum++)
+ for (SampleNum = 10; SampleNum < SincIntEdges+10; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -477,7 +480,7 @@ function fillPointsArr()
  for (i=0; i < 600; i++)
  TenXSamplesSum[i] = 0.0;
 
- for (SampleNum = -40; SampleNum < 0; SampleNum++)
+ for (SampleNum = -SincIntEdges; SampleNum < 0; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -495,7 +498,7 @@ function fillPointsArr()
   }
  }
 
- for (SampleNum = 10; SampleNum < 40; SampleNum++)
+ for (SampleNum = 10; SampleNum < SincIntEdges+10; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -522,7 +525,7 @@ function fillPointsArr()
  for (i=0; i < 600; i++)
  TenXSamplesSum[i] = 0.0;
 
- for (SampleNum = -40; SampleNum < 0; SampleNum++)
+ for (SampleNum = -SincIntEdges; SampleNum < 0; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -540,7 +543,7 @@ function fillPointsArr()
   }
  }
 
- for (SampleNum = 10; SampleNum < 40; SampleNum++)
+ for (SampleNum = 10; SampleNum < SincIntEdges+10; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -567,7 +570,7 @@ function fillPointsArr()
  for (i=0; i < 600; i++)
  TenXSamplesSum[i] = 0.0;
 
- for (SampleNum = -40; SampleNum < 0; SampleNum++)
+ for (SampleNum = -SincIntEdges; SampleNum < 0; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -585,7 +588,7 @@ function fillPointsArr()
   }
  }
 
- for (SampleNum = 10; SampleNum < 40; SampleNum++)
+ for (SampleNum = 10; SampleNum < SincIntEdges+10; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -612,7 +615,7 @@ function fillPointsArr()
  for (i=0; i < 600; i++)
  TenXSamplesSum[i] = 0.0;
 
- for (SampleNum = -40; SampleNum < 0; SampleNum++)
+ for (SampleNum = -SincIntEdges; SampleNum < 0; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -630,7 +633,7 @@ function fillPointsArr()
   }
  }
 
- for (SampleNum = 10; SampleNum < 40; SampleNum++)
+ for (SampleNum = 10; SampleNum < SincIntEdges+10; SampleNum++)
  {
  for (i= -200; i < 400; i++)
   {
@@ -1060,7 +1063,7 @@ function interpolateCromaCb(sampleNum)
 {
  sampleVal = 0;
  kernnorm=0;
- for (i=-40; i < 40; i+=2)
+ for (i=-SincIntEdgesChroma; i < SincIntEdgesChroma; i+=2)
   {
      arg = (i-sampleNum)*fPi/2;
      if (i<0) // left
@@ -1088,7 +1091,7 @@ function interpolateCromaCbF(sampleNum)
 {
  sampleVal = 0;
  kernnorm=0;
- for (i=-40; i < 40; i+=2)
+ for (i=-SincIntEdgesChroma; i < SincIntEdgesChroma; i+=2)
   {
      arg = (i-sampleNum)*fPi/2;
      if (i<0) // left
@@ -1117,7 +1120,7 @@ function filterCromaCb_UD2(sampleNum)
 {
  sampleVal = 0;
  kernnorm=0;
- for (i=-40; i < 40; i+=2)
+ for (i=-SincIntEdgesChroma; i < SincIntEdgesChroma; i+=2)
   {
      arg = (i-sampleNum)/2;
      if (i<0) // left
@@ -1146,7 +1149,7 @@ function interpolateCromaCr(sampleNum)
 {
  sampleVal = 0;
  kernnorm=0;
- for (i=-40; i < 40; i+=2)
+ for (i=-SincIntEdgesChroma; i < SincIntEdgesChroma; i+=2)
   {
      arg = (i-sampleNum)*fPi/2;
      if (i<0) 
@@ -1174,7 +1177,7 @@ function interpolateCromaCrF(sampleNum)
 {
  sampleVal = 0;
  kernnorm=0;
- for (i=-40; i < 40; i+=2)
+ for (i=-SincIntEdgesChroma; i < SincIntEdgesChroma; i+=2)
   {
      arg = (i-sampleNum)*fPi/2;
      if (i<0) // left
@@ -1203,7 +1206,7 @@ function filterCromaCr_UD2(sampleNum)
 {
  sampleVal = 0;
  kernnorm=0;
- for (i=-40; i < 40; i+=2)
+ for (i=-SincIntEdgesChroma; i < SincIntEdgesChroma; i+=2)
   {
      arg = (i-sampleNum)/2;
      if (i<0) 
@@ -1379,6 +1382,16 @@ function setLinMult()
 
 }
 
+function setEdgesInt()
+{
+  EdgesIntValue_t=document.getElementById("EdgesInt").value;
+  SincIntEdges = parseInt(EdgesIntValue_t);
+  SincIntEdgesChroma=SincIntEdges/2;
+
+  fillPointsArr();
+  updatePoints();
+
+}
 
 </script>
 
@@ -1504,7 +1517,9 @@ Y'=<input type="text" id="RightY" value="251" size="1"> Cb=<input type="text" id
 
 <input type="button" value="Set hard jump" onclick="setHardJump()" size="10"> 
 <input type="button" value="Switch chroma int" onclick="switchChromaInt()" size="10"><input type="text" id="TypeChromaInt" value="AR" size="10" disabled="">
+<br>
 <input type="button" value="Lin mult" onclick="setLinMult()" size="10"><input type="text" id="LinMult" value="3.5" size="10">
+<input type="button" value="EdgesInt" onclick="setEdgesInt()" size="10"><input type="text" id="EdgesInt" value="100" size="10">
 <br> 
 Colour transient manual design tool. 4:2:2 Rec.2100 HLG matrix/transfer.<br>
 R,G,B - linear decoded output, I - intensity linear. Yd=Y' - non-linear.<br>
