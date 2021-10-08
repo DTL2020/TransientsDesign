@@ -8,4 +8,4 @@ For displaying charts - Chart.js is used . See license on Chart.js project.
 
 HDR versions have Lin mult text input field and accept button. It is linear multiplier to linear RGB to best fit large HDR values to available chart range. Typical values may be in range from 3..5 to 50..100 and more (to display very low values of PQ for example).
 
-All versions have EdgesInt control param for defining the length of virtually continued left and right samples to control balance between render speed and amount of residual ringing on flat areas. It is recommended to start design with small enough values around 100 for faster machine responce and set higher values up to 500 and more for final design checking and fine-tuning. Known current issues - values around 50 may cause lost of correct update.
+All versions have EdgesInt control param for defining the length of virtually continued left and right samples to control balance between render speed and amount of residual ringing on flat areas. It is recommended to start design with small enough values around 100 for faster machine responce and set higher values up to 500 and more for final design checking and fine-tuning. 
